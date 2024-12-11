@@ -1,0 +1,222 @@
+// // Variables
+$primary-color: #1e1e1e;
+// $secondary-color: #f5f5f5;
+// $accent-color: #4CAF50;
+// $error-color: #f44336;
+// $border-radius: 4px;
+// $padding: 1.5rem; // Define the padding variable
+
+
+@import url('http://fonts.googleapis.com/css2?family=Poppins+Regular');
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'poppins', sans-serif;
+  box-sizing: border-box;
+
+}
+
+body{
+  display:flex;
+  min-height:100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.container{
+  width: 680px;
+}
+
+.container {
+  flex:1;
+  max-width: 300px;
+  margin: 0 auto;
+  margin-top: 20vh;
+  justify-self: center;
+  padding: 1rem;
+  background-color: #f5f5f5;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.entryarea {
+  position: relative;
+  height: 50px;
+  line-height: 80px;
+  margin-bottom: 20px;
+}
+
+input {
+  position: absolute;
+  width: 100%;
+  outline: none;
+  color: lightgray;
+  font-size: 1rem;
+  padding: 10px 30px;
+  line-height: 20px;
+  // border-radius: 10px;
+  background: transparent;
+  border: 1px solid lightgray;
+  transition: 0.1s ease;
+  z-index: 1;
+}
+
+.labelline {
+  position: absolute;
+  font-size: .8rem;
+  padding: 0 25px;
+  margin: -15px 20px;
+  transition: 0.2s ease;
+  color: gray;
+}
+
+input:focus,
+input:valid {
+  color: black;
+  border: 1px solid gray;
+}
+
+input:focus + .labelline,
+input:valid + .labelline {
+  color: black;
+  height: 30px;
+  line-height: 20px;
+  padding: 10px 12px;
+  background-color: #f5f5f5;
+  transform: translate(-25px, -6px) scale(0.7);
+  z-index: 1;
+}
+
+.links {
+  text-align: center;
+  margin-top: 1.5rem;
+  color:lightgrey;
+  text-decoration: none;
+
+  a {
+    color: lightgrey;
+    text-decoration: none;
+    margin: 0 0.5rem;
+
+    &:hover {
+      text-decoration: none;
+      color: red;
+    }
+  }
+}
+
+.loginBtn {
+  width: 100%;
+  padding: 1rem;
+  background-color: orangered;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: orange;
+  }
+}
+
+
+.title{
+  text-align: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-top: 10px;
+
+}
+.FooterLink{
+    color: lightgrey;
+    text-align: center;
+    justify-content: center;
+}
+
+h5{
+  word-wrap: break-word;
+  margin: 10px;
+}
+
+
+  // Placeholder
+  .entryarea {
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  input {
+    width: 100%;
+    outline: none;
+    color: lightgray;
+    font-size: 1rem;
+    padding: 10px 15px;
+    background: transparent;
+    border: 1px solid lightgray;
+    transition: 0.1s ease;
+
+    &:focus,
+    &:valid {
+        color: black;
+        border: 1px solid gray;
+    }
+
+    &:not(:placeholder-shown) + .labelline {
+        color: black;
+        height: 30px;
+        line-height: 20px;
+        padding: 10px 12px;
+        background-color: #f5f5f5;
+        transform: translate(-25px, -6px) scale(0.7);
+        z-index: 1;
+    }
+  }
+
+  .labelline {
+    position: absolute;
+    font-size: 0.9rem;
+    padding: 0 10px;
+    margin: -15px 10px;
+    transition: 0.2s ease;
+    color: gray;
+  }
+
+  .recaptcha{
+    margin-left: -18px;
+    margin-bottom: 20px;
+    width:80%;
+  }
+
+/* SCSS for error messages */
+.error-message {
+  color: red;             /* Text color red */
+  font-size: 0.9rem;      /* Slightly smaller font size */
+  margin-top: 4px;        /* Move the error message lower */
+  display: block;
+  padding-top: 15px;
+  padding-left: 60px;
+}
+
+/* Optional: Styling for invalid input fields */
+.entryarea input.ng-invalid {
+  border: 2px solid red;
+}
+
+.entryarea input.ng-touched.ng-invalid {
+  border-color: red;
+}
+
+/* Styling when the button is disabled */
+.disabled-btn {
+  background-color: grey; /* Change background to grey when disabled */
+  color: #ccc;            /* Change text color to light grey */
+  cursor: not-allowed;    /* Change cursor to indicate the button is not clickable */
+}
+
+/* Optional: Add hover effect for disabled button (it can be omitted) */
+.disabled-btn:hover {
+  background-color: grey; /* Keep the grey background even on hover */
+}

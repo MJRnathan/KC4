@@ -1,0 +1,32 @@
+<div class="footer">
+  <hr />
+  <div class="footer-content">
+    <div class="footer-left">
+      <a href="mailto:connect@tpoprofile.in">connect@tpoprofile.in</a>
+    </div>
+    <div class="footer-center">
+      <a href="/privacy-policy">Privacy Policy</a>
+    </div>
+    <div class="footer-right" style="margin-left:-20px;">
+      <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+        <i class="fab fa-facebook"></i>
+      </a>
+    </div>
+    <div class="footer-donate">
+      <a href="#" (click)="openQRCode()" aria-label="Donate">Donate</a>
+    </div>
+
+    <!-- Modal for QR Code -->
+    <div class="modal" [ngClass]="{'open': isModalOpen}">
+      <div class="modal-content">
+        <span class="close" (click)="closeQRCode()">&times;</span>
+        <img src="../../assets/MJRQRCode.jpeg" alt="QR Code" />
+      </div>
+    </div>
+</div>

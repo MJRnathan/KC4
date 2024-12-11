@@ -1,0 +1,49 @@
+// Container to center the card on the page
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;  // Full viewport height
+  margin: 0;
+}
+
+// Card styling
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 100%;
+  max-width: 400px;  // Limit the card's max width
+  text-align: center;
+}
+
+// Card content (optional custom styles)
+.card-content {
+  h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+  }
+}
+
+// Button styling
+.logout-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #c0392b;
+  }
+}

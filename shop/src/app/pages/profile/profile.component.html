@@ -1,0 +1,25 @@
+<!-- <div class="container">
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-6">
+      <div class="card mt-5 p-3 shadow">
+        <h3>Hello {{data?.userName}} </h3>
+        <p>Email: {{data?.email}} </p>
+        <button class="btn btn-danger" (click)="logout()">Logout</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="container">
+  <div class="card">
+    <div class="card-content">
+      <h3>Hi {{data?.firstName}} {{data?.lastName}}</h3>
+      <p>Phone# {{data?.phone}} </p>
+      <p>Email: {{data?.email}}</p>
+       <p>Subscription</p>
+      <p>Valid From:{{ data?.subscription_valid_from | date: 'dd MMM yyyy' : 'UTC' }}</p>
+      <p>Valid Upto:{{ data?.subscription_valid_upto | date: 'dd MMM yyyy' : 'UTC'}} </p>
+      <button class="logout-btn" (click)="logout()">Logout</button>
+    </div>
+  </div>
+</div>

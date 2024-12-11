@@ -1,0 +1,105 @@
+<!-- <div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow-lg p-5 mt-5 mb-5 text-center">
+        <h2>Welcome Back</h2> -->
+        <!-- <div class="alert alert-success" role="alert">
+          Login Successful! <a routerLink="/forgotPassword">Forgot Password</a>
+        </div> -->
+        <!-- <div [ngClass]="className" role="alert">
+          {{message}} <a routerLink="/forgotPassword" class="text-primary" style="cursor: pointer">Fogrot Password</a>
+        </div>
+
+        <form [formGroup]="loginForm" class="text-left">
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" class="form-control" placeholder="Email" formControlName="email">
+            <label>Password</label>
+            <input type="password" class="form-control" placeholder="********" formControlName="password">
+          </div><br>
+          <button class="btn btn-outline-primary btn-block m-1" (click)="login()">Login</button>
+          <button class="btn btn-outline-primary btn-block" (click)="forgotpassword()">Forgot Password?</button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<div class="container">
+  <div class="title">
+    <h6>Login to TPOProfile</h6>
+  </div>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <!-- <div class="entryarea">
+      <input type="email" formControlName="email" name="email" required placeholder=" ">
+      <div class="labelline">Email</div>
+    </div>
+
+    <div class="entryarea">
+      <input type="password" formControlName="password" name="password" required placeholder=" ">
+      <div class="labelline">Password</div>
+    </div> -->
+
+    <div class="entryarea">
+      <input id="email" type="email" formControlName="email" name="email" required placeholder=" "  [pattern]="emailPattern" >
+      <div class="labelline">Email</div>
+      <div *ngIf="loginForm.get('email')!.invalid && loginForm.get('email')?.touched">
+        <small *ngIf="loginForm.get('email')?.errors?.['required']" class="error-message">Email is required.</small>
+        <!-- <small *ngIf="loginForm.get('email')?.errors?.['email']" class="error-message">Invalid email format.</small> -->
+        <small *ngIf="loginForm.get('email')?.errors?.['pattern']" class="error-message">Email format xxx@xxx.xxx</small>
+      </div>
+    </div>
+
+    <div class="entryarea">
+      <input id="password"
+             type="password"
+             formControlName="password"
+             name="password"
+             required
+             placeholder=" "
+             [pattern]="'^(?=.*[a-zA-Z]).{8,12}$'"
+             minlength="8"
+             maxlength="12">
+      <div class="labelline">Password</div>
+      <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+        <small *ngIf="loginForm.get('password')?.errors?.['required']" class="error-message">Password is required.</small>
+        <small *ngIf="loginForm.get('password')?.errors?.['minlength']" class="error-message">Atleast 1 Alphabet, 8-12 Digits</small>
+        <small *ngIf="loginForm.get('password')?.errors?.['maxlength']" class="error-message">Password too long.</small>
+        <!-- <small *ngIf="signUpForm.get('password')?.errors?.['pattern']" class="error-message">Password must contain at least one letter.</small> -->
+      </div>
+    </div>
+
+
+    <div class="recaptcha">
+      <ngx-recaptcha2 #captchaElem
+      [siteKey]="siteKey"
+      formControlName="recaptcha">
+      </ngx-recaptcha2>
+    </div>
+
+    <!-- <button class="loginBtn" type="submit" (click)="loginUser()">Login</button> -->
+    <button
+    class="loginBtn"
+    type="submit"
+    [disabled]="loginForm.invalid"
+    [ngClass]="{'disabled-btn': loginForm.invalid}"
+  >
+    Login
+  </button>
+    <div class="links">
+      <a routerLink="/forgot-password">Forgot Password?</a>
+    </div>
+  </form>
+
+</div>
+
+<div class="links">
+  <h2></h2>
+  <div class="">
+  <p>Don't have an Account? <a routerLink="/signup">Sign Up</a></p>
+
+  </div>
+</div>
+

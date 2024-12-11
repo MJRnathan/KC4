@@ -1,0 +1,207 @@
+<div class="container">
+  <div class="title">
+    <h6>Create Your Account</h6>
+    <h6>&nbsp;</h6>
+  </div>
+        <!-- <div [ngClass]="className" role="alert">
+          {{message}} <a routerLink="/login" class="text-primary" style="cursor: pointer">Login Here 😊</a>
+        </div> -->
+        <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+          <!-- <div class="form-group"> -->
+
+            <!-- <label>Display Name</label>
+            <input type="text" class="form-control" placeholder="Username" formControlName="userName"> -->
+
+            <div class="entryarea">
+              <input id="fname" type="text" formControlName="firstName" name="fname" required placeholder=" ">
+              <div class="labelline">First Name</div>
+              <div *ngIf="signUpForm.get('firstName')!.invalid && signUpForm.get('firstName')?.touched">
+                <small *ngIf="signUpForm.get('firstName')?.errors?.['required']" class="error-message">First Name is required.</small>
+                <!-- <small *ngIf="loginForm.get('firstName')?.errors?.['firstName']" class="error-message">Invalid email format.</small> -->
+                <!-- <small *ngIf="signUpForm.get('firstName')?.errors?.['pattern']" class="error-message">Email format xxx@xxx.xxx</small> -->
+              </div>
+            </div>
+
+            <div class="entryarea">
+              <input id="lname" type="text" formControlName="lastName" name="lname" required placeholder=" ">
+              <div class="labelline">Last Name</div>
+              <div *ngIf="signUpForm.get('lastName')!.invalid && signUpForm.get('lastName')?.touched">
+                <small *ngIf="signUpForm.get('lastName')?.errors?.['required']" class="error-message">Last Name is required.</small>
+                <!-- <small *ngIf="loginForm.get('lastName')?.errors?.['lastName']" class="error-message">Invalid email format.</small> -->
+                <!-- <small *ngIf="signUpForm.get('lastName')?.errors?.['pattern']" class="error-message">Email format xxx@xxx.xxx</small> -->
+              </div>
+            </div>
+
+            <!-- <div class="entryarea">
+              <input id="phone" type="text" formControlName="phone" name="phone" required placeholder=" ">
+              <div class="labelline">Phone Number</div>
+              <div *ngIf="signUpForm.get('phone')!.invalid && signUpForm.get('phone')?.touched"> -->
+                <!-- <small *ngIf="signUpForm.get('phone')?.errors?.['required']" class="error-message">Phone is required.</small> -->
+                <!-- <small *ngIf="loginForm.get('phone')?.errors?.['phone']" class="error-message">Invalid Phone format.</small> -->
+                <!-- <small *ngIf="signUpForm.get('phone')" class="error-message">Please enter 10 digits</small>
+              </div>
+            </div> -->
+
+            <div class="entryarea">
+              <input id="phone"
+                     type="text"
+                     formControlName="phone"
+                     name="phone"
+                     required
+                     placeholder=" "
+                     pattern="^\d{10}$"
+                     maxlength="10">
+              <div class="labelline">Phone Number</div>
+              <div *ngIf="signUpForm.get('phone')!.invalid && signUpForm.get('phone')?.touched">
+                <small *ngIf="signUpForm.get('phone')?.errors?.['required']" class="error-message">Phone is required.</small>
+                <small *ngIf="signUpForm.get('phone')?.errors?.['pattern']" class="error-message">Please enter exactly 10 digits.</small>
+                <small *ngIf="signUpForm.get('phone')?.errors?.['maxlength']" class="error-message">Phone number cannot exceed 10 digits.</small>
+              </div>
+            </div>
+
+
+                <label class="checkbox-label">
+                  Add to Telegram Channel
+                  <input type="checkbox" style="display: inline-block; margin-left: -30px;" formControlName="add_to_telegram" name="add_to_telegram">
+                </label>
+                <h4>&nbsp;</h4>
+
+
+
+
+            <!-- <label>Email</label> -->
+            <!-- <input type="email" class="form-control" placeholder="Email" formControlName="email"> -->
+
+            <div class="entryarea">
+              <input id="email" type="email" formControlName="email" name="email" required placeholder=" "  [pattern]="emailPattern" >
+              <div class="labelline">Email</div>
+              <div *ngIf="signUpForm.get('email')!.invalid && signUpForm.get('email')?.touched">
+                <small *ngIf="signUpForm.get('email')?.errors?.['required']" class="error-message">Email is required.</small>
+                <!-- <small *ngIf="loginForm.get('email')?.errors?.['email']" class="error-message">Invalid email format.</small> -->
+                <small *ngIf="signUpForm.get('email')?.errors?.['pattern']" class="error-message">Email format xxx@xxx.xxx</small>
+              </div>
+            </div>
+
+
+            <!-- <label>Password</label> -->
+            <!-- <input type="password" class="form-control" placeholder="********" formControlName="password"> -->
+
+            <!-- <div class="entryarea"> -->
+              <!-- <input id="password" type="password" formControlName="password" name="password" required placeholder=" " [pattern]="passwordPattern" > -->
+              <!-- <input id="password" type="password" formControlName="password" name="password" required placeholder=" ">
+              <div class="labelline">Password</div>
+              <div *ngIf="signUpForm.get('password')?.invalid && signUpForm.get('password')?.touched">
+                <small *ngIf="signUpForm.get('password')?.errors?.['required']" class="error-message">Password is required.</small>
+                <small *ngIf="signUpForm.get('password')?.errors?.['minlength']" class="error-message">Should be 8-12 characters</small>
+                <small *ngIf="signUpForm.get('password')?.errors?.['maxlength']" class="error-message">Password too long.</small> -->
+                <!-- <small *ngIf="loginForm.get('password')?.errors?.['pattern']" class="error-message">Password 8-12 characters "A,1,(%^&*)</small> -->
+              <!-- </div>
+            </div> -->
+
+
+
+            <div class="entryarea">
+              <input id="password"
+                     type="password"
+                     formControlName="password"
+                     name="password"
+                     required
+                     placeholder=" "
+                     [pattern]="'^(?=.*[a-zA-Z]).{8,12}$'"
+                     minlength="8"
+                     maxlength="12">
+              <div class="labelline">Password</div>
+              <div *ngIf="signUpForm.get('password')?.invalid && signUpForm.get('password')?.touched">
+                <small *ngIf="signUpForm.get('password')?.errors?.['required']" class="error-message">Password is required.</small>
+                <small *ngIf="signUpForm.get('password')?.errors?.['minlength']" class="error-message">Atleast 1 Alphabet, 8-12 Digits</small>
+                <small *ngIf="signUpForm.get('password')?.errors?.['maxlength']" class="error-message">Password too long.</small>
+                <!-- <small *ngIf="signUpForm.get('password')?.errors?.['pattern']" class="error-message">Password must contain at least one letter.</small> -->
+              </div>
+            </div>
+
+
+          <!-- </div> -->
+          <br>
+          <!-- <button class="btn btn-outline-primary btn-block" (click)="onSubmit()">Create Account</button> -->
+        <!-- </form>
+      </div> -->
+
+      <div class="card">
+        <div class="card-content">
+          <h3>Select Subscription</h3>
+
+          <label class="radio-label">
+            <input type="radio" id="subscription1" formControlName="selectedOption" name="selectedOption" required value="30" onclick="togglePaymentButton()">
+            1 Month Rs. 450/-
+          </label>
+
+          <label class="radio-label">
+            <input type="radio" id="subscription2" formControlName="selectedOption" name="selectedOption" value="90" onclick="togglePaymentButton()">
+            3 Months Rs. 1200/-
+          </label>
+        </div>
+
+
+        <button type="submit" class="paymentBtn" name="paymentBtn" *ngIf="signUpForm.get('selectedOption')?.value" [disabled]="signUpForm.invalid">Pay Now!</button>
+
+        <!-- <button id="paymentBtn" class="paymentBtn" name="paymentBtn" disabled>Proceed to Payment</button> -->
+
+        <!-- <button
+        class="paymentBtn"
+        name="paymentBtn"
+        type="submit"
+        [disabled]="signUpForm.invalid"
+        [ngClass]="{'disabled-btn': signUpForm.invalid}"
+      >
+        Pay Now!
+      </button> -->
+      </div>
+
+
+      <div class="recaptcha">
+        <ngx-recaptcha2 #captchaElem
+        [siteKey]="siteKey"
+        formControlName="recaptcha">
+        </ngx-recaptcha2>
+      </div>
+
+      <!-- <button class="submitBtn" type="submit">Sign Up</button> -->
+      <button
+      class="submitBtn"
+      type="submit"
+      [disabled]="signUpForm.invalid"
+      [ngClass]="{'disabled-btn': signUpForm.invalid}"
+    >
+      Sign Up
+    </button>
+    </form>
+  </div>
+
+    <div class="links">
+      <h2></h2>
+      <p>Already have an account? <a routerLink="/login">Login here</a></p>
+    </div>
+
+
+      <!--  -->
+      <!-- <form [formGroup]="signUpForm" (submit)="onSubmit()">
+        <div class="entryarea">
+          <input id="email" type="email" formControlName="email" name="email" required placeholder=" "  [pattern]="emailPattern" >
+          <div class="labelline">Email</div>
+          <div *ngIf="signUpForm.get('email')!.invalid && signUpForm.get('email')?.touched">
+            <small *ngIf="signUpForm.get('email')?.errors?.['required']" class="error-message">Email is required.</small> -->
+            <!-- <small *ngIf="loginForm.get('email')?.errors?.['email']" class="error-message">Invalid email format.</small> -->
+            <!-- <small *ngIf="signUpForm.get('email')?.errors?.['pattern']" class="error-message">Email format xxx@xxx.xxx</small>
+          </div>
+        </div>
+
+        <div class="entryarea"> -->
+          <!-- <input id="password" type="password" formControlName="password" name="password" required placeholder=" " [pattern]="passwordPattern" > -->
+          <!-- <input id="password" type="password" formControlName="password" name="password" required placeholder=" ">
+          <div class="labelline">Password</div>
+          <div *ngIf="signUpForm.get('password')?.invalid && signUpForm.get('password')?.touched">
+            <small *ngIf="signUpForm.get('password')?.errors?.['required']" class="error-message">Password is required.</small>
+            <small *ngIf="signUpForm.get('password')?.errors?.['minlength']" class="error-message">Should be 8-12 characters</small>
+            <small *ngIf="signUpForm.get('password')?.errors?.['maxlength']" class="error-message">Password too long.</small> -->
+            <!-- <small *ngIf="loginForm.get('password')?.errors?.['pattern']" class="error-message">Password 8-12 characters "A,1,(%^&*)</small> -->
+          <!-- </div> -->

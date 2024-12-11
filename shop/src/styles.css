@@ -1,0 +1,56 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+
+// html, body { height: 100%; }
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* Ensure the html and body take full height of the screen */
+html, body {
+  height: 100%;
+}
+
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* The wrapper that takes up the full height of the viewport */
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full height of the viewport */
+}
+
+/* Content section will take up available space */
+.content {
+  flex: 1; /* This makes sure the content section grows to fill the available space */
+}
+
+
+
+/* You can add global styles to this file, and also import other style files */
+
+// html, body { height: 100%; }
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* Ensure the html and body take full height of the screen */
+html, body {
+  height: 100%;
+}
+
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* The wrapper that takes up the full height of the viewport */
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full height of the viewport */
+}
+
+/* Content section will take up available space */
+.content {
+  flex: 1; /* This makes sure the content section grows to fill the available space */
+}
+
+/* Styling for the footer */
+.footer {
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+}
